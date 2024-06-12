@@ -1,0 +1,13 @@
+[
+    {
+        "CNH": "123456789",
+        "Nome": "Arthur Brito",
+        "RG": "2354323422",
+        "Idade": 17,
+        "End_logradouro": "Rua Eduardo Joaquim Neves",
+        "End_numero": 353,
+        "End_bairro": "Jardim Res. Noroeste",
+        "End_cidade": "Votuporanga",
+        "End_uf": "SP"
+    }
+]

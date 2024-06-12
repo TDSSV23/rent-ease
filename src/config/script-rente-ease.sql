@@ -14,3 +14,4 @@ select * from cliente;
 
 -- Inserts
 insert into cliente values ('123456789', 'Arthur Brito', '2354323422', 17, 'Rua Eduardo Joaquim Neves', 353, 'Jardim Res. Noroeste', 'Votuporanga', 'SP');
+insert into cliente values ('123456798', 'Felipe Mazotti', '50398867801', 17, 'Rua Maria Camillo Bimbato', 4392, 'Jardim Portal dos Lagos', 'Votuporanga', 'SP');
