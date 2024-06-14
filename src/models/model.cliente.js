@@ -13,39 +13,36 @@ class ClienteModel {
         });
     }
     // Cria um cliente
-    static createCliente(nome, email, senha, callback) {
-        const hash = bcrypt.hashSync(senha, 10);
-        senha = hash;
-        
-        let sql = `insert into usuario (nome, email, senha) values (?, ?, ?)`;
+    static createCliente(dados, callback) {
+        let sql = `insert into cliente(cnh, nome, rg, idade, end_logradouro, end_numero, end_bairro, end_cidade, end_uf) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 
-        con.query(sql, [nome, email, senha], function(err, result){
-            if (err)
-                callback(err, null);
-            else
-                callback(null, result);
-        });
-    }
-
-    static editCliente(id, nome, email, callback) {
-        let sql = `update usuario set nome = ?, email = ? where id_usuario = ?`;
-
-        con.query(sql, [nome, email, id], function(err, result){
-            if (err)
-                callback(err, null);
-            else
-                callback(null, result);
-        });
-    }
-
-    static removeCliente(id, callback) {
-        let sql = `delete from usuario where id_usuario=?`
-
-        con.query(sql, [id], function(err, result){
+        con.query(sql, [dados.cnh, dados.nome, dados.rg, dados.idade, dados.end_logradouro, dados.end_numero, dados.end_bairro, dados.end_cidade, dados.end_uf], function(err, result){
             if (err)
                 callback(err, null)
             else 
-                callback(null, result)
+                callback(null, result);
+        });
+    }
+    // Edita um cliente
+    static editCliente(dados, CNH, callback) {
+        let sql = `update cliente set nome = ?, rg = ?, idade = ?, end_logradouro = ?, end_numero = ?, end_bairro = ?, end_cidade = ?, end_uf = ? where cnh = ?`;
+
+        con.query(sql, [dados.nome, dados.rg, dados.idade, dados.end_logradouro, dados.end_numero, dados.end_bairro, dados.end_cidade, dados.end_uf, CNH], function(err, result){
+            if (err)
+                callback(err, null);
+            else
+                callback(null, result);
+        });
+    }
+    // Deleta um cliente
+    static removeCliente(cnh, callback) {
+        let sql = `delete from cliente where cnh = ?`
+
+        con.query(sql, [cnh], function(err, result){
+            if (err)
+                callback(err, null);
+            else
+                callback(null, result);
         });
     }
 }
