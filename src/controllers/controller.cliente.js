@@ -33,7 +33,7 @@ class ClienteController {
                 }
 
                 return res.status(201).json( { 
-                    message: "Cliente cadastrado com sucesso",
+                    message: "Cliente cadastrado com sucesso"
                  })
             });
         } catch (error) {

@@ -11,6 +11,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 
 CREATE SCHEMA IF NOT EXISTS `rent_ease_database` DEFAULT CHARACTER SET utf8 ;
 
+use rent_ease_database;
+
 CREATE TABLE IF NOT EXISTS `rent_ease_database`.`cliente` (
   `cnh` CHAR(9) NOT NULL,
   `nome` VARCHAR(5) NULL DEFAULT NULL,
@@ -110,9 +112,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- Inserts
 insert into cliente values ('123456789', 'Arthur Brito', '2354323422', 17, 'Rua Eduardo Joaquim Neves', 353, 'Jardim Res. Noroeste', 'Votuporanga', 'SP');
-
 insert into categoria (preco_diaria, nome, descricao) values ( 1000.10, "Carros de luxo", "Carros onde você pode andar por ai ostentando seu dinehiro com muito luxo e gostosas no capô");
-
-
--- Updates
-update cliente set Nome = "Arroz da Silva" where CNH = "123456789";
+insert into servico (valor, oficina, descricao) values (10000.00, "Oficina do seu Zé", "O carro bateu, e acabou amassando boa parte da frente do carro, afetou o motor e tals");
+insert into carro values ("12345678912345678", "Vermelho", "Purusangue SUV", "Ferrari", "ABC1B34", 2022, 1);

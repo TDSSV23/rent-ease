@@ -8,5 +8,4 @@ routeCliente.post("/cliente", ClienteController.createCliente);
 routeCliente.put("/cliente/:cnh", ClienteController.editCliente);
 routeCliente.delete("/cliente/:cnh", ClienteController.removeCliente);
 
-
 export default routeCliente;

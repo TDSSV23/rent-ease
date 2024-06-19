@@ -24,10 +24,10 @@ class ClienteModel {
         });
     }
     // Edita um cliente
-    static editCliente(dados, CNH, callback) {
+    static editCliente(dados, cnh, callback) {
         let sql = `update cliente set nome = ?, rg = ?, idade = ?, end_logradouro = ?, end_numero = ?, end_bairro = ?, end_cidade = ?, end_uf = ? where cnh = ?`;
 
-        con.query(sql, [dados.nome, dados.rg, dados.idade, dados.end_logradouro, dados.end_numero, dados.end_bairro, dados.end_cidade, dados.end_uf, CNH], function(err, result){
+        con.query(sql, [dados.nome, dados.rg, dados.idade, dados.end_logradouro, dados.end_numero, dados.end_bairro, dados.end_cidade, dados.end_uf, cnh], function(err, result){
             if (err)
                 callback(err, null);
             else
